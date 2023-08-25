@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Kumbh+Sans:wght@400;500;700&family=Poppins:wght@400;500;700&family=Rubik:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="style.css" rel="stylesheet" />
+    <title>Frontend Mentor | Intro component with sign up form</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="heading">
+        <h1>Learn to code by watching others</h1>
+        <p>
+          See how experienced developers solve problems in real-time. Watching
+          scripted tutorials is great, but understanding how developers think is
+          invaluable.
+        </p>
+      </div>
+      <div class="form">
+        <button class="trail">
+          <p><strong>Try it free 7 days</strong> then $20/mo. thereafter</p>
+        </button>
+        <form method="post" class="sheet">
+          <div>
+            <input
+              type="text"
+              class="text fname-field"
+              name="first-name"
+              placeholder="FirstName"
+              required
+              pattern="[A-Za-z]"
+            />
+            <p class="fname-error-msg fname-success-msg"></p>
+          </div>
+          <div>
+            <input
+              type="text"
+              class="text lname-field"
+              name="last-name"
+              placeholder="LastName"
+              required
+              pattern="[A-Za-z]"
+            />
+            <p class="lname-error-msg lname-success-msg"></p>
+          </div>
+          <div>
+            <input
+              type="text"
+              class="text email-field"
+              name="email"
+              placeholder="Email Address"
+              required
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+            />
+            <p class="email-error-msg email-success-msg"></p>
+          </div>
+          <div>
+            <input
+              type="text"
+              class="text pwd-field"
+              name="pwd"
+              placeholder="Password"
+              required
+              pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+            />
+            <p class="pwd-error-msg pwd-success-msg"></p>
+          </div>
+          <button class="free-trail">Claim your free trial</button>
+          <p class="terms">
+            By clicking the button, you are agreeing to our
+            <span>Terms and Services</span>
+          </p>
+        </form>
+      </div>
+    </div>
+    <script>
+      const freeButton = document.querySelector(".free-trail");
+      const fnameInput = document.querySelector(".fname-field");
+      const lnameInput = document.querySelector(".lname-field");
+      const emailInput = document.querySelector(".email-field");
+      const pwdInput = document.querySelector(".pwd-field");
+      const fnameErrorMessage = document.querySelector(".fname-error-msg");
+      const lnameErrorMessage = document.querySelector(".lname-error-msg");
+      const emailErrorMessage = document.querySelector(".email-error-msg");
+      const pwdErrorMessage = document.querySelector(".pwd-error-msg");
+
+      const log = (event) => {
+        const namePattern = new RegExp("[0-9]");
+        const nameResponse = namePattern.test(
+          fnameInput.value,
+          lnameInput.value
+        );
+        const emailPattern = new RegExp("@");
+        const emailResponse = emailPattern.test(emailInput.value);
+        const pwdPattern = new RegExp("\w");
+        const pwdResponse = pwdPattern.test(pwdInput.value);
+
+        if (fnameInput.value === "") {
+          fnameErrorMessage.textContent = "First Name cannot be empty";
+          fnameErrorMessage.classList.add("error-txt");
+          fnameInput.classList.add("failed");
+          event.preventDefault();
+        }
+
+        if (lnameInput.value === "") {
+          lnameErrorMessage.textContent = "Last Name cannot be empty";
+          lnameErrorMessage.classList.add("error-txt");
+          lnameInput.classList.add("failed");
+          event.preventDefault();
+        }
+
+        if (emailInput.value === "") {
+          emailErrorMessage.textContent = "Email Address cannot be empty";
+          emailErrorMessage.classList.add("error-txt");
+          emailInput.classList.add("failed");
+          event.preventDefault();
+        } else if (emailResponse === false) {
+          emailErrorMessage.textContent = "Looks like this is not an email";
+          emailErrorMessage.classList.add("error-txt");
+          emailInput.classList.add("failed");
+          event.preventDefault();
+        }
+
+        if (pwdInput.value === "") {
+          pwdErrorMessage.textContent = "Password cannot be empty";
+          pwdErrorMessage.classList.add("error-txt");
+          pwdInput.classList.add("failed");
+          event.preventDefault();
+        }
+      };
+
+      freeButton.addEventListener("click", (event) => log(event));
+    </script>
+  </body>
+</html>

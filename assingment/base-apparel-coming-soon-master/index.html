@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Josefin+Sans:wght@400;500;700&family=Kumbh+Sans:wght@400;500;700&family=Manrope:wght@400;500;700&family=Poppins:wght@400;500;700&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet" />
+    <title>Frontend Mentor | Base Apparel coming soon page</title>
+  </head>
+  <body>
+    <div class="container">
+      <header class="content-img">
+        <p><img src="images/logo.svg" alt="logo" class="logo" /></p>
+      </header>
+      <div class="side"></div>
+
+      <main class="description">
+        <p class="heading"><span>We're </span>coming soon</p>
+        <p class="detail">
+          Hello fellow shoppers! We're currently building our new fashion store.
+          Add your email below to stay up-to-date with announcements and our
+          launch deals.
+        </p>
+        <form>
+          <div>
+            <input
+              type="text"
+              class="email email-field"
+              name="email"
+              placeholder="Email Address"
+              required
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+            />
+            <p class="email-error-msg"></p>
+          </div>
+          <button class="free-trail"></button>
+        </form>
+      </main>
+    </div>
+    <!-- <footer>
+      <p class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="#">Your Name Here</a>.
+      </p>
+    </footer> -->
+    <script>
+      const freeButton = document.querySelector(".free-trail");
+      const emailInput = document.querySelector(".email-field");
+      const emailErrorMessage = document.querySelector(".email-error-msg ");
+      const log = (event) => {
+        const emailPattern = new RegExp("@");
+        const emailResponse = emailPattern.test(emailInput.value);
+        if (emailInput.value === "") {
+          emailErrorMessage.textContent = "Email Address cannot be empty";
+          emailErrorMessage.classList.add("error-txt");
+          emailInput.classList.add("failed");
+          event.preventDefault();
+        } else if (emailResponse === false) {
+          emailErrorMessage.textContent = "Looks like this is not an email";
+          emailErrorMessage.classList.add("error-txt");
+          emailInput.classList.add("failed");
+          event.preventDefault();
+        }
+      };
+      freeButton.addEventListener("click", (event) => log(event));
+    </script>
+  </body>
+</html>

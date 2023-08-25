@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Kumbh+Sans:wght@400;500;700&family=Manrope:wght@400;500;700&family=Poppins:wght@400;500;700&family=Rubik:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link href="style.css" rel="stylesheet" />
+    <title>Frontend Mentor | Article preview component</title>
+  </head>
+  <body>
+    <div class="container">
+      <img src="images/drawers.jpg" alt="drawers image" class="drawer" />
+      <div class="container-details">
+        <div class="description">
+          <h2>
+            Shift the overall look and feel by adding these wonderful touches to
+            furniture in your home
+          </h2>
+          <p>
+            Ever been in a room and felt like something was missing? Perhaps it
+            felt slightly bare and uninviting. I've got some simple tips to help
+            you make any room feel complete.
+          </p>
+        </div>
+        <div class="author">
+          <img src="images/avatar-michelle.jpg" class="author-img" />
+          <div class="author-details">
+            <h4>Michelle Appleton</h4>
+            <p class="date">28 Jun 2020</p>
+          </div>
+          <div class="btn" onclick="myFunction()">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="icon"
+              viewBox="0 0 512 512"
+            >
+              <path
+                d="M448 256L272 88v96C103.57 184 64 304.77 64 424c48.61-62.24 91.6-96 208-96v96z"
+                stroke="currentColor"
+                stroke-linejoin="round"
+                stroke-width="10"
+              />
+            </svg>
+            <span class="active" id="myPopup">
+              <div><p class="share">share</p></div>
+              <div class="act">
+                <a href="#"> <img src="images/icon-facebook.svg" /> </a>
+                <a href="#"> <img src="images/icon-pinterest.svg" /> </a>
+                <a href="#"> <img src="images/icon-twitter.svg" /></a>
+                <a href="#"></a>
+              </div>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      function myFunction() {
+        var active = document.getElementById("myPopup");
+        active.classList.add("show");
+      }
+    </script>
+  </body>
+</html>

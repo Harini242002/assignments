@@ -1,0 +1,97 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  font-size: 16px;
+  font-family: "Red Hat Display";
+  background-image: url("images/pattern-background-desktop.svg");
+  background-position: right 0vw bottom 40vh, left 40vw top 0vh;
+  background-repeat: no-repeat;
+  background-color: hsl(225, 100%, 94%);
+}
+.container {
+  width: 350px;
+  height: 550px;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.background-img {
+  width: 100%;
+}
+.description {
+  text-align: center;
+}
+.summary {
+  padding: 20px;
+}
+h2 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+.btn {
+  padding: 20px;
+}
+.plan {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  border-radius: 10px;
+  background-color: hsl(225, 100%, 98%);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+.plan-detail {
+  margin-left: -20px;
+}
+h3 {
+  color: hsl(223, 47%, 23%);
+}
+.price {
+  margin-top: 5px;
+  text-align: start;
+  color: hsl(224, 23%, 55%);
+}
+a:link,
+a:visited {
+  border: none;
+
+  color: hsl(245, 75%, 52%);
+  cursor: pointer;
+}
+a:hover,
+a:active {
+  text-decoration: none;
+}
+
+.order {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.payment {
+  background-color: hsl(245, 75%, 52%);
+  color: #fff;
+  padding: 15px;
+
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0px 15px 10px hsl(225, 100%, 94%);
+  cursor: pointer;
+  font-weight: bold;
+}
+.cancel {
+  border: none;
+  background-color: inherit;
+  font-weight: bold;
+  color: hsl(224, 23%, 55%);
+  cursor: pointer;
+}
