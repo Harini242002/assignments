@@ -157,9 +157,7 @@ h4 {
     margin-left: -250px;
     letter-spacing: 3px;
 
-    /* background-image: url("./images/icon-share.svg");
-    background-repeat: no-repeat;
-    background-position: right 10vh bottom 6vw, left 10vh top 0vh; */
+    
   }
   .act {
     display: flex;
